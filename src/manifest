@@ -1,0 +1,17 @@
+## Channel Details
+title=Streamplace
+subtitle=AT Protocol Livestreaming
+major_version=1
+minor_version=0
+build_version=00001
+
+## Channel Assets
+mm_icon_focus_hd=pkg:/images/channel_icon_hd.png
+mm_icon_focus_sd=pkg:/images/channel_icon_sd.png
+splash_screen_hd=pkg:/images/splash_hd.png
+splash_screen_sd=pkg:/images/splash_sd.png
+splash_color=#1a1a2e
+splash_min_time=1500
+
+## Resolution
+ui_resolutions=hd

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="MainScene" extends="Scene">
+    <interface>
+        <field id="deepLinkHandle" type="string" onChange="onDeepLink" />
+    </interface>
+
+    <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
+
+    <children>
+        <!-- Header / Logo area -->
+        <LayoutGroup
+            id="headerGroup"
+            layoutDirection="horiz"
+            horizAlignment="left"
+            translation="[60, 30]"
+            itemSpacings="[16]"
+        >
+            <Label
+                id="logoLabel"
+                text="▶ Streamplace"
+                font="font:LargeBoldSystemFont"
+                color="#e0e0ff"
+            />
+            <Label
+                id="taglineLabel"
+                text="Live on AT Protocol"
+                font="font:SmallestSystemFont"
+                color="#8888aa"
+                translation="[0, 12]"
+            />
+        </LayoutGroup>
+
+        <!-- Status bar -->
+        <Label
+            id="statusLabel"
+            text="Loading streams..."
+            font="font:SmallSystemFont"
+            color="#8888aa"
+            translation="[60, 80]"
+        />
+
+        <!-- Live Now section header -->
+        <Label
+            id="liveNowLabel"
+            text="🔴 Live Now"
+            font="font:MediumBoldSystemFont"
+            color="#ff4444"
+            translation="[60, 120]"
+            visible="false"
+        />
+
+        <!-- Grid of live streams -->
+        <PosterGrid
+            id="streamGrid"
+            translation="[60, 170]"
+            basePosterSize="[356, 200]"
+            itemSpacing="[20, 30]"
+            caption1NumLines="1"
+            caption2NumLines="1"
+            caption1Font="font:SmallBoldSystemFont"
+            caption2Font="font:SmallestSystemFont"
+            caption1Color="#e0e0ff"
+            caption2Color="#8888aa"
+            numColumns="3"
+            numRows="2"
+            visible="false"
+        />
+
+        <!-- No streams message -->
+        <LayoutGroup
+            id="emptyStateGroup"
+            layoutDirection="vert"
+            horizAlignment="center"
+            translation="[640, 300]"
+            itemSpacings="[16]"
+            visible="false"
+        >
+            <Label
+                id="emptyLabel"
+                text="No one is live right now"
+                font="font:LargeBoldSystemFont"
+                color="#8888aa"
+                horizAlign="center"
+            />
+            <Label
+                id="emptySubLabel"
+                text="Check back later or visit stream.place to start streaming!"
+                font="font:SmallSystemFont"
+                color="#666688"
+                horizAlign="center"
+            />
+        </LayoutGroup>
+
+        <!-- Loading spinner -->
+        <BusySpinner
+            id="loadingSpinner"
+            translation="[620, 340]"
+            visible="true"
+        />
+
+        <!-- Video player (hidden until stream selected) -->
+        <Video
+            id="videoPlayer"
+            visible="false"
+            translation="[0, 0]"
+            width="1280"
+            height="720"
+        />
+
+        <!-- Stream info overlay (shown during playback) -->
+        <LayoutGroup
+            id="streamInfoOverlay"
+            layoutDirection="vert"
+            translation="[40, 600]"
+            itemSpacings="[4]"
+            visible="false"
+        >
+            <Rectangle
+                width="400"
+                height="90"
+                color="#000000"
+                opacity="0.7"
+            />
+            <Label
+                id="nowPlayingLabel"
+                text=""
+                font="font:MediumBoldSystemFont"
+                color="#ffffff"
+                translation="[12, -80]"
+            />
+            <Label
+                id="nowPlayingHandle"
+                text=""
+                font="font:SmallSystemFont"
+                color="#aaaacc"
+                translation="[12, -50]"
+            />
+        </LayoutGroup>
+    </children>
+</component>
