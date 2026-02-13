@@ -43,7 +43,7 @@ The app uses stream.place's XRPC API endpoints (AT Protocol standard):
 
 Streams are played back via HLS at:
 ```
-https://stream.place/watch/{handle}/output.m3u8
+https://stream.place/api/playback/{handle}/ndex.m3u8
 ```
 
 ### Controls
@@ -95,7 +95,7 @@ https://stream.place/watch/{handle}/output.m3u8
 If stream.place changes their URL structure, update the `playStream()` function in `MainScene.brs`:
 
 ```brightscript
-hlsUrl = "https://stream.place/watch/" + handle + "/output.m3u8"
+hlsUrl = "https://stream.place/api/playback/" + handle + "/index.m3u8"
 ```
 
 ### API Base URL
