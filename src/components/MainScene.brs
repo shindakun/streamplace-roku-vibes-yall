@@ -80,7 +80,7 @@ sub playStream(userData as Object)
 
     ' Build the HLS URL from stream.place
     ' stream.place serves HLS via the segments endpoint
-    hlsUrl = "https://stream.place/watch/" + handle + "/output.m3u8"
+    hlsUrl = "https://stream.place/api/playback/" + handle + "/index.m3u8"
 
     videoContent = createObject("roSGNode", "ContentNode")
     videoContent.url = hlsUrl
